@@ -4,7 +4,7 @@ import SanitizeHTML from '../SanitizeHTML';
 import Calendar from '../Icons/calendar.jsx';
 import Clock from '../Icons/clock.jsx';
 import Pin from '../Icons/pin.jsx';
-import ArrowRight from '../Icons/arrow-right.jsx';
+import ArrowTopRight from '../Icons/arrow-top-right.jsx';
 
 const Event = ({ event }) => {
     const { guid, content, allday, start_date, end_date, signups, location } = event;
@@ -119,7 +119,7 @@ const Event = ({ event }) => {
                     </div>
                     <div className="_sp451--events__event--link">
                         <span>Register</span>
-                        <ArrowRight />
+                        <ArrowTopRight />
                     </div>
                 </div>
             </div>

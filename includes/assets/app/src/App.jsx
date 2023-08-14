@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import api from './lib/api/api.js';
+import { API_OBJECT } from './lib/api/builder.js';
 
 import Loaders from './components/Loaders'
 import Events from './components/Events';
@@ -33,7 +34,7 @@ function App() {
 
         return (
             <>
-                <Events events={events} />
+                <Events events={API_OBJECT.showFeaturedFirst ? events.sort((x, y) => y.featured - x.featured) : events} />
             </>
         )
     }

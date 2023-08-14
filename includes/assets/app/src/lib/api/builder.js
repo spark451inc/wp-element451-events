@@ -3,6 +3,8 @@ import axios from 'axios';
 const DEV = import.meta.env.DEV;
 
 const {
+    VITE_PUBLIC_MAX_EVENTS,
+    VITE_PUBLIC_SHOW_FEATURED_FIRST,
     VITE_PUBLIC_CLIENT,
     VITE_PUBLIC_API_URL,
     VITE_PUBLIC_ANALYTICS_TOKEN,
@@ -12,6 +14,8 @@ const {
 } = import.meta.env;
 
 const DEV_API_OBJECT = {
+    maxEvents: VITE_PUBLIC_MAX_EVENTS,
+    showFeaturedFirst: VITE_PUBLIC_SHOW_FEATURED_FIRST,
     client: VITE_PUBLIC_CLIENT,
     apiUrl: VITE_PUBLIC_API_URL,
     analytics: VITE_PUBLIC_ANALYTICS_TOKEN,
@@ -21,6 +25,8 @@ const DEV_API_OBJECT = {
 };
 
 const PROD_API_OBJECT = window.sp451_api_params ? {
+    maxEvents: window.sp451_api_params?.sp451_max_events,
+    showFeaturedFirst: window.sp451_api_params?.sp451_show_featured_first,
     client: window.sp451_api_params?.sp451_client,
     apiUrl: window.sp451_api_params?.sp451_apiUrl,
     analytics: window.sp451_api_params?.sp451_analytics,
@@ -31,7 +37,7 @@ const PROD_API_OBJECT = window.sp451_api_params ? {
 
 export const API_OBJECT = DEV ? DEV_API_OBJECT : PROD_API_OBJECT;
 
-const BASE_API_URI = `https://${API_OBJECT.client}.${API_OBJECT.apiUrl}/v2/events/list?analytics=${API_OBJECT.analytics}&feature=${API_OBJECT.feature}&&embed[editor]=obj&offset=0&limit=6`;
+const BASE_API_URI = `https://${API_OBJECT.client}.${API_OBJECT.apiUrl}/v2/events/list?analytics=${API_OBJECT.analytics}&feature=${API_OBJECT.feature}&&embed[editor]=obj&offset=0&limit=${API_OBJECT.maxEvents}`;
 
 const endpoint = async (path) => `${BASE_API_URI}/${path.replace(/^\/+/g, '')}`;
 

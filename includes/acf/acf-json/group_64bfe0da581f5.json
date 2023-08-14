@@ -3,12 +3,57 @@
     "title": "Settings",
     "fields": [
         {
+            "key": "field_64da8c7711b4c",
+            "label": "Maximum Events to show",
+            "name": "sp451_max_events",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "3": "3",
+                "6": "6"
+            },
+            "default_value": 3,
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_64da8cb311b4d",
+            "label": "Always show Featured Events first:",
+            "name": "sp451_show_featured_first",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_64bfe0db991ca",
             "label": "Client",
             "name": "sp451_client_key",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "The name that appears in your Element451 instance. Example: “<strong>CLIENT<\/strong>.element451.io\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -23,6 +68,24 @@
             "append": ""
         },
         {
+            "key": "field_64da8cfc11b4e",
+            "label": "API Keys",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Ask your Element451 support team for the appropriate API keys below.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_64bfe104991cb",
             "label": "Analytics Key",
             "name": "sp451_analytics_key",
@@ -32,7 +95,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -52,7 +115,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -68,7 +131,7 @@
             "name": "sp451_event_domain",
             "aria-label": "",
             "type": "text",
-            "instructions": "Enter event domain.",
+            "instructions": "URL where your Element451 event site exists.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -88,7 +151,7 @@
             "name": "sp451_plch_img",
             "aria-label": "",
             "type": "image",
-            "instructions": "Add image placeholder. It will be used in case image doesn't exist for event.",
+            "instructions": "Add image placeholder. It will be used in case image doesn't exist for an event.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -106,6 +169,24 @@
             "max_size": "",
             "mime_types": "",
             "preview_size": "medium"
+        },
+        {
+            "key": "field_64da8db280a7f",
+            "label": "Instructions",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "To add the Element451 Events block to your website, include the shortcode <strong>[element451_events]<\/strong> wherever you want the block to appear. Use the options above to customize how events appear.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
@@ -126,5 +207,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1692042942
+    "modified": 1692044821
 }

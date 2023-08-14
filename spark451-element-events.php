@@ -36,11 +36,13 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
 	class SP451_ELEMENT_EVENTS extends SP451_ELEMENT_EVENTS_Singleton {
 		protected $sp451_element_events_template;
 
-        protected $client_key         = '';
-        protected $analytics_key      = '';
-        protected $feature_key        = '';
-        protected $plch_image         = '';
-        protected $sp451_event_domain = '';
+        protected $max_events          = 3;
+        protected $show_featured_first = false;
+        protected $client_key          = '';
+        protected $analytics_key       = '';
+        protected $feature_key         = '';
+        protected $plch_image          = '';
+        protected $sp451_event_domain  = '';
 
 		public function init() {
 			$this->include( 'includes/templates.php' );
@@ -75,11 +77,13 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
             $this->admin_page_setup();
 
             add_action('acf/init', function () {
-                $this->client_key         = get_field('sp451_client_key', 'sp451-element-events');
-                $this->analytics_key      = get_field('sp451_analytics_key', 'sp451-element-events');
-                $this->feature_key        = get_field('sp451_feature_key', 'sp451-element-events');
-                $this->sp451_event_domain = get_field('sp451_event_domain', 'sp451-element-events');
-                $this->plch_image         = get_field('sp451_plch_img', 'sp451-element-events') ? get_field('sp451_plch_img', 'sp451-element-events')['url'] : $this->get_url('includes/assets/public/element_logo.jpg');
+                $this->max_events          = get_field('sp451_max_events', 'sp451-element-events');
+                $this->show_featured_first = get_field('sp451_show_featured_first', 'sp451-element-events');
+                $this->client_key          = get_field('sp451_client_key', 'sp451-element-events');
+                $this->analytics_key       = get_field('sp451_analytics_key', 'sp451-element-events');
+                $this->feature_key         = get_field('sp451_feature_key', 'sp451-element-events');
+                $this->sp451_event_domain  = get_field('sp451_event_domain', 'sp451-element-events');
+                $this->plch_image          = get_field('sp451_plch_img', 'sp451-element-events') ? get_field('sp451_plch_img', 'sp451-element-events')['url'] : $this->get_url('includes/assets/public/element_logo.jpg');
             });
 
             $myUpdateChecker = PucFactory::buildUpdateChecker(
@@ -134,13 +138,15 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
             wp_enqueue_script( 'sdc-script' );
 
             wp_localize_script( 'sdc-script', 'sp451_api_params', array(
-                'ajaxUrl'            => site_url() . '/wp-admin/admin-ajax.php',
-                'sp451_client'       => $this->client_key,
-                'sp451_apiUrl'       => 'api.451.io',
-                'sp451_analytics'    => $this->analytics_key,
-                'sp451_feature'      => $this->feature_key,
-                'sp451_event_domain' => $this->sp451_event_domain,
-                'sp451_plch_img'     => $this->plch_image,
+                'ajaxUrl'                   => site_url() . '/wp-admin/admin-ajax.php',
+                'sp451_max_events'          => $this->max_events,
+                'sp451_show_featured_first' => $this->show_featured_first,
+                'sp451_client'              => $this->client_key,
+                'sp451_apiUrl'              => 'api.451.io',
+                'sp451_analytics'           => $this->analytics_key,
+                'sp451_feature'             => $this->feature_key,
+                'sp451_event_domain'        => $this->sp451_event_domain,
+                'sp451_plch_img'            => $this->plch_image,
             ) );
             wp_enqueue_style( 'sdc-style', $path_css, [], true);
         }
