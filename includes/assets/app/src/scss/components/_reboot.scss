@@ -1,0 +1,49 @@
+// sass-lint:disable no-vendor-prefixes, no-important, single-line-per-selector force-pseudo-nesting no-duplicate-properties force-attribute-nesting no-qualifying-elements
+// Reboot
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+}
+
+// IE10+ doesn't honor `<meta name='viewport'>` in some cases.
+@at-root {
+    @-ms-viewport {
+        width: device-width;
+    }
+}
+// stylelint-enable selector-list-comma-newline-after
+
+// Body
+//
+// 1. Remove the margin in all browsers.
+// 2. As a best practice, apply a default `background-color`.
+// 3. Set an explicit initial text-align value so that we can later use the
+//    the `inherit` value on things like `<th>` elements.
+
+body {
+    margin: 0; // 1
+
+    .c_wrapper.cr {
+        padding: 0;
+    }
+    .part_rows_container>div.part {
+        margin-bottom: 10px;
+    }
+
+    #content_body {
+        padding: 0 10px;
+    }
+}
+
+img {
+    max-width: 100%;
+    width: auto; height: auto;
+}

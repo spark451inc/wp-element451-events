@@ -1,0 +1,21 @@
+.sp451-element-events {
+    max-width: 100% !important;
+}
+
+#sp451-element-events-root {
+
+    ._sp451--events {
+
+        &__wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 calc(#{$grid-gutter-width} / 2);
+        }
+
+        &__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 calc(#{-$grid-gutter-width} / 2);
+        }
+    }
+}
