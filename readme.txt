@@ -16,12 +16,11 @@ This is Element451 Events plugin created by Spark451.com.
 
 == Installation ==
 
-Plugin Settings
-Add new “Options” section, this should be displayed first
+=Plugin Settings=
 
-Add option to display max of 3 or 6 events (radio buttons)
-
-Label: Maximum Events to show:
+* Add new “Options” section, this should be displayed first
+** Add option to display max of 3 or 6 events (radio buttons)
+*** Label: Maximum Events to show:
 
 Add option to always display Featured events first (checkbox)
 
