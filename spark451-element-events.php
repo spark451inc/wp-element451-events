@@ -3,7 +3,7 @@
 Plugin Name: Element451 Events
 Plugin URI:  https://github.com/spark451inc/wp-element451-events
 Description: Powered by Spark451
-Version:     1.0.0
+Version:     1.0.1
 Author:      Spark451.com
 Author URI:  https://www.spark451.com/
 License:     GPL-2.0+
@@ -117,7 +117,7 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
         private function admin_page_setup() {
             if ( function_exists('acf_add_options_page') ) {
                 acf_add_options_page(array(
-                    'page_title' 	=> 'Element451 Events',
+                    'page_title' 	=> '<div style="line-height: 1;">Element451 Events</div><em style="font-size: 12px;">Powered by Spark451</em>',
                     'menu_title'	=> '<span>Element451 Events</span>',
                     'menu_slug' 	=> 'sp451-element-events',
                     'post_id'       => 'sp451-element-events',
