@@ -4,7 +4,7 @@ Donate link: https://github.com/bkrsmanovic
 Tags: element451, events, spark451
 Requires at least: 6.0
 Tested up to: 6.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,3 +26,6 @@ For any additional information, contact your Element451 support team.
 
 = 1.0.1 =
 * Test auto-update feature
+
+= 1.0.2 =
+* Update logic for featured events
