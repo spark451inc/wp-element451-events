@@ -37,9 +37,11 @@ const PROD_API_OBJECT = window.sp451_api_params ? {
 
 export const API_OBJECT = DEV ? DEV_API_OBJECT : PROD_API_OBJECT;
 
-const BASE_API_URI = `https://${API_OBJECT.client}.${API_OBJECT.apiUrl}/v2/events/list?analytics=${API_OBJECT.analytics}&feature=${API_OBJECT.feature}&&embed[editor]=obj&offset=0&limit=${API_OBJECT.maxEvents}`;
+const BASE_API_URI = `https://${API_OBJECT.client}.${API_OBJECT.apiUrl}/v2/events/list?analytics=${API_OBJECT.analytics}&feature=${API_OBJECT.feature}&featured=0&embed[editor]=obj&offset=0&limit=${API_OBJECT.maxEvents}`;
+const BASE_API_FEATURED_URI = `https://${API_OBJECT.client}.${API_OBJECT.apiUrl}/v2/events/list?analytics=${API_OBJECT.analytics}&feature=${API_OBJECT.feature}&featured=1&embed[editor]=obj&offset=0&limit=${API_OBJECT.maxEvents}`;
 
 const endpoint = async (path) => `${BASE_API_URI}/${path.replace(/^\/+/g, '')}`;
+const endpointFeatured = async (path) => `${BASE_API_FEATURED_URI}/${path.replace(/^\/+/g, '')}`;
 
 const config = async () => ({
     headers: {
@@ -50,6 +52,7 @@ const config = async () => ({
 
 export default {
     get: async (path, params) => axios.get(await endpoint(path = ''), Object.assign({}, await config(), { params: params })),
+    getFeatured: async(path, params) => axios.get(await endpointFeatured(path = ''), Object.assign({}, await config(), { params: params })),
     post: async (path, data) => axios.post(await endpoint(path), data, await config()),
     put: async (path, data) => axios.put(await endpoint(path), data, await config()),
     delete: async (path) => axios.delete(await endpoint(path), await config()),

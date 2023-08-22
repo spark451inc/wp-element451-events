@@ -17,5 +17,26 @@
             flex-wrap: wrap;
             margin: 0 calc(#{-$grid-gutter-width} / 2);
         }
+
+        &__link {
+            margin-top: 20px;
+            text-align: right;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            svg {
+                position: relative;
+                top: 2px;
+                height: 14px; width: 14px;
+                margin-left: 10px;
+            }
+        }
     }
 }
