@@ -1,6 +1,4 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://github.com/bkrsmanovic
 Tags: element451, events, spark451
 Requires at least: 6.0
 Tested up to: 6.3
