@@ -21,11 +21,14 @@ For any additional information, contact your Element451 support team.
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial commit
+= 1.0.3 =
+* Fix render issue
+
+= 1.0.2 =
+* Update logic for featured events
 
 = 1.0.1 =
 * Test auto-update feature
 
-= 1.0.2 =
-* Update logic for featured events
+= 1.0.0 =
+* Initial commit
