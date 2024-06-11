@@ -12,7 +12,7 @@ function App() {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        if (!!!+API_OBJECT.showFeaturedFirst) {
+        if (!API_OBJECT.showFeaturedFirst) {
             api.getEvents()
               .then((d) => setEvents(d.data?.data))
               .catch(e => setError(e.message))
