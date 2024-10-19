@@ -198,6 +198,10 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
                         </td>
                     </tr>
                 </table>
+                <h2 class="title">Instructions</h2>
+                <p>
+                    To add the Element451 Events block to your website, include the shortcode <strong>[element451_events]</strong> wherever you want the block to appear. Use the options above to customize how events appear.
+                </p>
                 <input type="hidden" name="sp451_save_settings" value="1">
               <?php submit_button(); ?>
             </form>
