@@ -223,6 +223,10 @@ if ( ! class_exists( 'SP451_ELEMENT_EVENTS') ) :
       $path = $this->get_url('includes/assets/app/dist/main.js');
       $path_css = $this->get_url('includes/assets/app/dist/main.css');
 
+      if (!$this->client_key || !$this->analytics_key || !$this->feature_key) {
+          return;
+      }
+
       wp_register_script( 'sdc-script', $path, [ 'jquery' ], '1.1', true );
 
       wp_enqueue_script( 'sdc-script' );
