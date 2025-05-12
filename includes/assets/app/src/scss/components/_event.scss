@@ -34,6 +34,8 @@
             box-shadow: 0 0 15px rgba($black, .1);
             background: $white;
             height: 100%;
+            color: inherit;
+            text-decoration: none;
         }
 
         &--image {

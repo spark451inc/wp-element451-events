@@ -36,12 +36,15 @@ const Event = ({ event }) => {
         );
     };
 
-    const onEventClick = () => {
+    const eventUrl = () => {
         if (!API_OBJECT?.eventDomain)
-            return;
+            return 'javascript:void(0)';
 
         let slug = guid.split('.').slice(2).join('.');
-        window.open(`${API_OBJECT.eventDomain}/event/${slug}`, '_blank');
+
+        let url = `${API_OBJECT.eventDomain}/event/${slug}`;
+
+        return url.replace(/([^:]\/)\/+/g, '$1');
     }
 
     let _renderTime = () => {
@@ -85,7 +88,7 @@ const Event = ({ event }) => {
 
     return (
         <div className="_sp451--events__event">
-            <div className="_sp451--events__event--inner" onClick={onEventClick}>
+            <a href={eventUrl()} className="_sp451--events__event--inner" target="_blank" rel="noopener noreferrer" title={`${API_OBJECT?.eventDomain ? 'Click to view event data' : ''}`}>
                 <div className="_sp451--events__event--image">
                     {_renderImage()}
                 </div>
@@ -122,7 +125,7 @@ const Event = ({ event }) => {
                         <ArrowTopRight />
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     )
 }
