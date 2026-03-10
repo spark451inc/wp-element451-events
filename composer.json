@@ -1,0 +1,15 @@
+{
+    "name": "spark451/wp-element451-events",
+    "description": "Element451 Events WordPress plugin powered by Spark451",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Spark451",
+            "homepage": "https://www.spark451.com/"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2.0"
+    }
+}
